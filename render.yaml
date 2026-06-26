@@ -1,8 +1,6 @@
 services:
   - type: web
     name: fraud-detection
-    env: python
-    buildCommand: pip install -r requirements-deploy.txt
-    startCommand: uvicorn api.server:app --host 0.0.0.0 --port 10000
-    healthCheckPath: /health
     plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
