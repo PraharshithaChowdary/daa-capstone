@@ -53,7 +53,10 @@ app = FastAPI(
     title="Fraud Detection using Graph Mining",
     description="API for detecting fraudulent patterns using graph mining algorithms",
     version="1.0.0",
-    lifespan=lifespan
+    lifespan=lifespan,
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json"
 )
 
 app.add_middleware(
