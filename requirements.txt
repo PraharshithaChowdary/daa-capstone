@@ -1,0 +1,88 @@
+# Core dependencies
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+scikit-learn>=1.3.0
+scikit-learn-intelex>=2023.0.0
+
+# Graph libraries
+networkx>=3.1
+networkx-algorithms[all]>=3.1
+igraph>=0.10.0
+python-louvain>=0.16
+python-igraph>=0.10.0
+leidenalg>=0.10.0
+graph-tool>=2.61
+
+# Graph mining algorithms
+networkx-algorithms[all]>=3.1
+karateclub>=1.3.0
+node2vec>=0.4.0
+nodevectors>=0.2.0
+torch>=2.0.0
+torch-geometric>=2.3.0
+pyg-lib>=0.1.0
+
+# Machine Learning
+xgboost>=2.0.0
+lightgbm>=4.0.0
+catboost>=1.2.0
+optuna>=3.3.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-learn>=1.3.0
+
+# Database
+psycopg2-binary>=2.9.0
+sqlalchemy>=2.0.0
+alembic>=1.11.0
+
+# API
+fastapi>=0.100.0
+uvicorn>=0.23.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+python-multipart>=0.0.6
+
+# Visualization
+networkx>=3.1
+matplotlib>=3.7.0
+plotly>=5.15.0
+dash>=2.12.0
+dash-cytoscape>=0.3.0
+networkx-drawing>=1.0.0
+pyvis>=0.3.0
+graphviz>=0.20.0
+
+# Monitoring & Logging
+prometheus-client>=0.17.0
+structlog>=23.1.0
+loguru>=0.7.0
+
+# Configuration
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-asyncio>=0.21.0
+pytest-mock>=3.11.0
+
+# Utilities
+tqdm>=4.65.0
+python-dateutil>=2.8.0
+pytz>=2023.3
+python-dateutil>=2.8.0
+ujson>=5.8.0
+orjson>=3.9.0
+
+# Development
+black>=23.0.0
+isort>=5.12.0
+flake8>=6.0.0
+mypy>=1.4.0
+pre-commit>=3.3.0

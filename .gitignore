@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data
+*.csv
+*.parquet
+*.json
+!config/config.yaml
+
+# Model files
+*.pkl
+*.joblib
+
+# Output
+output/
+reports/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# pytest
+.pytest_cache/
+__pycache__/
+*.pyc
+.env
+venv/
+.pytest_cache/
+*.pkl
+output/
+*.csv
+

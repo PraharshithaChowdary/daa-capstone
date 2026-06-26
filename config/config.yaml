@@ -1,0 +1,92 @@
+database:
+  host: "localhost"
+  port: 5432
+  name: "fraud_detection"
+  user: "postgres"
+  password: "password"
+
+graph:
+  min_transaction_amount: 10.0
+  max_transaction_amount: 100000.0
+  time_window_hours: 24
+  min_transaction_count: 2
+  community_detection:
+    algorithm: "louvain"
+    resolution: 1.0
+  pagerank:
+    damping_factor: 0.85
+    max_iterations: 100
+    tolerance: 1e-6
+  community_detection:
+    min_community_size: 3
+    resolution: 1.0
+
+features:
+  graph_features:
+    - pagerank
+    - betweenness_centrality
+    - clustering_coefficient
+    - degree_centrality
+    - community_id
+    - community_size
+    - triangle_count
+    - clustering_coefficient
+    - pagerank_score
+    - betweenness_centrality
+    - closeness_centrality
+    - eigenvector_centrality
+  temporal_features:
+    - transaction_frequency
+    - amount_statistics
+    - time_since_last_tx
+    - velocity_features
+  behavioral_features:
+    - unique_merchants
+    - unique_devices
+    - unique_locations
+    - avg_transaction_amount
+    - std_transaction_amount
+    - transaction_velocity
+    - night_transaction_ratio
+    - weekend_transaction_ratio
+
+model:
+  type: "xgboost"
+  params:
+    n_estimators: 200
+    max_depth: 6
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+  threshold: 0.5
+  retrain_interval_days: 7
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  timeout: 30
+
+graph_mining:
+  pagerank:
+    damping_factor: 0.85
+    max_iterations: 100
+    tolerance: 1e-6
+  louvain:
+    resolution: 1.0
+    random_state: 42
+  label_propagation:
+    max_iterations: 30
+  lpa:
+    max_iterations: 30
+  triangle_counting: true
+  k_core:
+    k: 3
+
+visualization:
+  enabled: true
+  port: 8050
+  graph_layout: "force_directed"
+  node_size_attribute: "pagerank"
+  node_color_attribute: "community"
