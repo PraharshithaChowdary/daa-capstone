@@ -11,7 +11,11 @@ import logging
 import time
 import sys
 import os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_nested_root = os.path.join(_repo_root, 'fraud_detection')
+if os.path.isdir(_nested_root):
+    _repo_root = _nested_root
+sys.path.insert(0, _repo_root)
 
 from api.schemas import (
     TransactionRequest, FraudPredictionResponse, BatchPredictionRequest,

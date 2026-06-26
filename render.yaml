@@ -1,13 +1,8 @@
 services:
   - type: web
     name: fraud-detection
-    runtime: python
-    repo: https://github.com/your-username/fraud-detection
-    branch: main
+    env: python
     buildCommand: pip install -r requirements-deploy.txt
     startCommand: uvicorn api.server:app --host 0.0.0.0 --port 10000
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.11
     healthCheckPath: /health
     plan: free
